@@ -1,0 +1,11 @@
+services:
+    - type: web
+      name: json-server
+      env: node
+      plan: starter
+      buildCommand: npm install
+      startCommand: npx json-server db.json --port 10000
+      envVars:
+          - key: NODE_ENV
+            value: production
+      healthCheckPath: /
